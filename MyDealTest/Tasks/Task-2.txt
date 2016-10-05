@@ -1,0 +1,13 @@
+*************************************************************************************************
+	Create a new db if you havent done for first task 
+	configure the web.config
+	run update-database to create the structure
+
+*************************************************************************************************
+Created a web api to get the inputs via post
+Wrote code for parsing the content and list the passengers as json
+Grouped by group name to present easily with angular
+created a new page for listing the passengers
+Added angularjs to list passengers through api
+added the search to filter records
+Moved the scripts to bottom to load after content is loaded

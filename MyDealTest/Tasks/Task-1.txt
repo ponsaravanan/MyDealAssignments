@@ -1,0 +1,16 @@
+*************************************************************************************************
+	Create a new db and configure the web.config
+	run update-database to create the structure
+
+*************************************************************************************************
+Created a db using entity frame work
+Enabled Code first migrations
+Created a table for tracking shortened urls 
+the shortened urls are randomized per application life.
+duplicate check done to prevent same handle for differnet urls if the application pool recycled
+all the scripts are minified to serve faster
+Created a bundle configuration to serve the scripts in one go
+Added a regular expression validation to restrict the urls outside of mydeal.com.au
+Redirection done using the permanent redirect so that search engines can follow.
+Moved the scripts to bottom to load after content is loaded
+ 

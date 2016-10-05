@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div>Assignment - 1</div>
+            <div>@Html.ActionLink("Redirects List", "Index", "UrlRedirects", null, htmlAttributes: new { @class = "btn btn-success" })</div>
+        </li>
+        <li class="list-group-item">
+            <div>Assignment - 2</div>
+            <div>@Html.ActionLink("Passengers List", "Index", "Passengers", null, htmlAttributes: new { @class = "btn btn-danger" })</div>
+
+        </li>
+
+    </ul>
+</div>

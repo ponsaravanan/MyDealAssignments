@@ -1,0 +1,68 @@
+﻿@model MyDealTest.ViewModel.PassengerProcess
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@section HeaderScripts
+{
+}
+
+
+
+<h2><i class="ion-ios-paper-outline"></i> <span>Passengers List</span></h2>
+<div ng-app="MyDealApp">
+    @using (Html.BeginForm())
+    {
+
+        <div class="row" ng-controller="PassengersController">
+            <div class="col-md-6 pull-left ">
+                <span>@ViewBag.Message</span><br />
+                <div class="row-fluid  col-md-12">
+                    <input type="submit" value="Load" class="btn btn-info  margin-s remove-left-margin" /><div class="btn btn-success margin-s" ng-click="ProcessThis()">Process</div><br />
+                </div><hr />
+                @Html.TextAreaFor(model => model.RawPassengerText, new { rows = 25, cols = 300, ng_model = "RawPassengersInput", @class = "margin-s-vert" })
+
+            </div>
+            <div class="col-md-6 pull-right">
+                <div class="input-group col-md-6 row " >
+
+                    <input type='text' ng-model="SearchInput" class="form-control remove-left-margin" />
+                    <span class="input-group-btn">
+                        <input type="button" class="btn btn-success remove-left-margin" ng-click="ProcessThis()" value="Search" />
+                    </span>
+                </div>
+                <br />
+                <br />
+
+                <ul class="list-group row">
+                    <li class="list-group-item" ng-repeat="EachGroup in AllPassengers">
+                        <h3><i class="ion-person-stalker"></i>  <span>{{EachGroup.GroupName}}</span></h3>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="EachPassenger in EachGroup.Passengers">
+                                <span><i class="ion-person"></i> <span> {{EachPassenger}}</span></span>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+@section BodyScripts
+{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+    @Scripts.Render("~/bundles/passengers")
+
+
+}
